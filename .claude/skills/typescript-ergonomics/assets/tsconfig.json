@@ -1,0 +1,35 @@
+{
+  // Strict, runtime-agnostic base for the typescript-ergonomics skill.
+  // Adjust `module`/`moduleResolution`/`lib` to your runtime:
+  //   - Node (no bundler):  module + moduleResolution "NodeNext"  (as below)
+  //   - Vite/webpack/etc.:  module "ESNext", moduleResolution "Bundler"
+  //   - Browser / Next.js:  add "DOM", "DOM.Iterable" to `lib`
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+
+    // --- Type safety (the core of the ruleset) ---
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "forceConsistentCasingInFileNames": true,
+
+    // --- Module ergonomics ---
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    // --- Build hygiene ---
+    "skipLibCheck": true,
+    "incremental": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
